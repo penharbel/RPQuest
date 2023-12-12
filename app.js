@@ -20,9 +20,8 @@ var test = database.authenticate()
     })
     .catch(function (err) {
         console.log("SOMETHING DONE GOOFED");
+        console.log(err);
     })
-    .done();
-console.log(test);
 //============Finaização do teste==============
 
 //Config
