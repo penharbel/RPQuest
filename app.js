@@ -5,6 +5,9 @@ const app = Express();
 //Body_parser
 const BodyP = require("body-parser");
 
+//uuid
+const uuid = require("uuid")
+
 //Sequelize + Database
 const Sequelize = require("sequelize");
 const database = new Sequelize('datalog', 'datalog_user', 'ceVUaEgdQPW7G2QLvGVpJRiLA2eITlsn', {
@@ -36,11 +39,9 @@ const database = new Sequelize('datalog', 'datalog_user', 'ceVUaEgdQPW7G2QLvGVpJ
         },
         id: {
             type: Sequelize.STRING,
-            autoIncrement: true,
             primaryKey: true
         }
     })
-    database.sync()
 
 //Config
     //Body_parser
@@ -59,9 +60,11 @@ app.get('', (req,res) => {
 
 app.post('/login', (req,res) => {
 
+    let Ids = uuid.v4()
     Login.create({
         login: req.body.login,
-        senha: req.body.senha
+        senha: req.body.senha,
+        id: Ids
     });
 
     res.sendFile('Game.html', {
