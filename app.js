@@ -13,16 +13,34 @@ const database = new Sequelize('datalog', 'datalog_user', 'ceVUaEgdQPW7G2QLvGVpJ
     port: 5432
 });
 
-//Conexão com o banco de dados (Teste)
-var test = database.authenticate()
-    .then(function () {
-        console.log("CONNECTED! ");
+    //Conexão com o banco de dados (Teste)
+        database.authenticate()
+        .then(function () {
+            console.log("CONNECTED!");
+        })
+        .catch(function (err) {
+            console.log("SOMETHING DONE GOOFED");
+            console.log(err);
+        })
+    //============Finaização do teste==============
+
+    //criando tabelas
+    const Login = database.define('logins', {
+        login: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        senha: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        id: {
+            type: Sequelize.STRING,
+            autoIncrement: true,
+            primaryKey: true
+        }
     })
-    .catch(function (err) {
-        console.log("SOMETHING DONE GOOFED");
-        console.log(err);
-    })
-//============Finaização do teste==============
+    database.sync()
 
 //Config
     //Body_parser
@@ -39,7 +57,12 @@ app.get('', (req,res) => {
 
 });
 
-app.post('login', (req,res) => {
+app.post('/login', (req,res) => {
+
+    Login.create({
+        login: req.body.login,
+        senha: req.body.senha
+    });
 
     res.sendFile('Game.html', {
         root: (__dirname + "/Public/Game")

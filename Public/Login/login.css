@@ -1,14 +1,44 @@
+body
+{
+    background-color: rgb(224, 111, 111);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
 form
 {
-width: 500px;
-height: 500px;
-background-color: rgb(197, 197, 197);
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(white 0%, rgb(5, 57, 134) 200%);
+    z-index: 10;
+    position: absolute;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-
+input
+{
+    width: 50%;
+    height: 20px;
+    border-radius: 10px;
+    border-width: 0px;
+    margin: 5px;
+    background-color: rgb(255, 255, 255);
+}
 #button
 {
-width: 125px;
-height: 50px;
-border-radius: 15px;
-background-color: brown;
+    width: 125px;
+    height: 50px;
+    border-radius: 3px;
+    border: none;
+    background-color: white;
+    margin: 75px;
+    position: relative;
+    top: 30px;
+}
+#back-image
+{
+    opacity: 0.7;
+    margin: -10px;
 }

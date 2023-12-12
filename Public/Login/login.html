@@ -6,13 +6,18 @@
     <link rel="stylesheet" href="login.css">
     <title>Login RPQ</title>
 </head>
-<body>
+<body onload="responsivo()">
+
+    <img src="Imagens/brandi-redd-aJTiW00qqtI-unsplash.jpg" alt="backgrond" id="back-image">
     
-    <form action="/login" method="post">
+    <form action="/login" method="post" id="form">
+        <h3>Login</h3>
         <input type="text" name="login">
+        <h3>Senha</h3>
         <input type="password" name="senha">
-        <button id="button"></button>
+        <button id="button">Registrar-se</button>
     </form>
 
+    <script lang="js" src="codes.js"></script>
 </body>
 </html>
