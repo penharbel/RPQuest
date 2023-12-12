@@ -1,0 +1,1 @@
+Não está permitido o uso desse app para fins comerciais ou que irá gerar algum tipo de renda.
