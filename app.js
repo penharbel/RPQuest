@@ -7,7 +7,7 @@ const BodyP = require("body-parser");
 
 //Sequelize + Database
 const Sequelize = require("sequelize");
-const database = Sequelize('datalog', 'datalog_user', 'ceVUaEgdQPW7G2QLvGVpJRiLA2eITlsn', {
+const database = new Sequelize('datalog', 'datalog_user', 'ceVUaEgdQPW7G2QLvGVpJRiLA2eITlsn', {
     host: 'localhost',
     dialect: 'postgres',
     port: 5432
