@@ -51,7 +51,7 @@ const database = new Sequelize('datalog', 'datalog_user', 'ceVUaEgdQPW7G2QLvGVpJ
 //Routes
 app.get('', (req,res) => {
 
-    app.use(Express.static('contracts'));
+    app.use(Express.static(__dirname + '/Public/Login'));
     res.sendFile('login.html', {
         root: (__dirname + "/Public/Login")
     });
