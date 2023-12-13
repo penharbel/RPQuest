@@ -39,7 +39,7 @@ const database = new Sequelize('datalog', 'datalog_user', 'ceVUaEgdQPW7G2QLvGVpJ
         },
         id: {
             type: Sequelize.STRING,
-            allowNull: false
+            primaryKey: true
         }
     })
 
