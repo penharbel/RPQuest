@@ -64,7 +64,7 @@ app.post('/login', (req,res) => {
     (async () =>{
         await database.sync();
 
-        Login.create({
+        await Login.create({
             login: req.body.login,
             senha: req.body.senha,
             id: Ids
