@@ -39,7 +39,7 @@ const database = new Sequelize('datalog', 'datalog_user', 'ceVUaEgdQPW7G2QLvGVpJ
         },
         id: {
             type: Sequelize.STRING,
-            primaryKey: true
+            allowNull: false
         }
     })
 
@@ -65,11 +65,12 @@ app.post('/login', (req,res) => {
         login: req.body.login,
         senha: req.body.senha,
         id: Ids
-    });
+    })
 
+    app.use(Express.static(__dirname + '/Public/Game'));
     res.sendFile('Game.html', {
         root: (__dirname + "/Public/Game")
-    })
+    });
 
 });
 

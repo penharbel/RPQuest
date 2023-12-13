@@ -8,7 +8,7 @@ form
 {
     width: 500px;
     height: 500px;
-    background: linear-gradient(white 0%, rgb(5, 57, 134) 200%);
+    background: linear-gradient(white 0%, rgb(134, 5, 22) 200%);
     z-index: 10;
     position: absolute;
     border-radius: 25px;
