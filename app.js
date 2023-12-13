@@ -69,6 +69,7 @@ app.post('/login', (req,res) => {
             senha: req.body.senha,
             id: Ids
         })
+        console.log(database.findAll());
     });
     
 
