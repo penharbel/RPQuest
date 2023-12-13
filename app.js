@@ -61,11 +61,16 @@ app.get('', (req,res) => {
 app.post('/login', (req,res) => {
 
     let Ids = uuid.v4()
-    Login.create({
-        login: req.body.login,
-        senha: req.body.senha,
-        id: Ids
-    })
+    (async () =>{
+        await database.sync();
+
+        Login.create({
+            login: req.body.login,
+            senha: req.body.senha,
+            id: Ids
+        })
+    });
+    
 
     app.use(Express.static(__dirname + '/Public/Game'));
     res.sendFile('Game.html', {
