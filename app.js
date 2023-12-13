@@ -60,7 +60,7 @@ app.get('', (req,res) => {
 
 app.post('/login', (req,res) => {
 
-    let Ids = uuid.v4()
+    let Ids = uuid.v4();
     (async () =>{
         await database.sync();
 
